@@ -18,4 +18,29 @@ nbConversions = 0 ;
 public String toString () {
 return "nb de conversions"+ nbConversions;
 }
+ public static double CelsiusVersKelvin(double tCelsius) {
+        return tCelsius + 273.15;
+    }
+
+    public static double KelvinVersCelsius(double tKelvin) {
+        return tKelvin - 273.15;
+    }
+
+    public static double FahrenheitVersCelsius(double tFahrenheit) {
+        return (tFahrenheit - 32) * 5/9;
+    }
+
+    public static double CelsiusVersFahrenheit(double tCelsius) {
+        return (tCelsius * 9/5) + 32;
+    }
+
+    public static double FahrenheitVersKelvin(double tFahrenheit) {
+        double celsius = FahrenheitVersCelsius(tFahrenheit);
+        return CelsiusVersKelvin(celsius);
+    }
+
+    public static double KelvinVersFahrenheit(double tKelvin) {
+        double celsius = KelvinVersCelsius(tKelvin);
+        return CelsiusVersFahrenheit(celsius);
+    }
 }

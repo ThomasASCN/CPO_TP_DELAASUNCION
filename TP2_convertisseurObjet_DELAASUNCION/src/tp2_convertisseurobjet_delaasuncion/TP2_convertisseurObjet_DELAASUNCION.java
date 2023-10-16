@@ -17,5 +17,58 @@ public class TP2_convertisseurObjet_DELAASUNCION {
         // TODO code application logic here
          convertisseur convertisseur1 = new convertisseur();
     }
-    
+      Scanner sc = new Scanner(System.in);
+        
+        System.out.println("1. Convertir degrés Celsius en degrés Kelvin.");
+        System.out.println("2. Convertir degrés Kelvin en degrés Celsius.");
+        System.out.println("3. Convertir degrés Fahrenheit en degrés Celsius.");
+        System.out.println("4. Convertir degrés Celsius en degrés Fahrenheit.");
+        System.out.println("5. Convertir degrés Fahrenheit en degrés Kelvin.");
+        System.out.println("6. Convertir degrés Kelvin en degrés Fahrenheit.");
+        System.out.println("Choisissez une option (1-6) :");
+        
+        int choix = sc.nextInt();
+        double temperature;
+
+        switch (choix) {
+            case 1:
+                System.out.println("Entrer une température en degrés Celsius :");
+                temperature = sc.nextDouble();
+                double kelvin = CelsiusVersKelvin(temperature);
+                System.out.println("La température en degrés Kelvin est : " + kelvin);
+                break;
+            case 2:
+                System.out.println("Entrer une température en degrés Kelvin :");
+                temperature = sc.nextDouble();
+                double celsius = KelvinVersCelsius(temperature);
+                System.out.println("La température en degrés Celsius est : " + celsius);
+                break;
+            case 3:
+                System.out.println("Entrer une température en degrés Fahrenheit :");
+                temperature = sc.nextDouble();
+                celsius = FahrenheitVersCelsius(temperature);
+                System.out.println("La température en degrés Celsius est : " + celsius);
+                break;
+            case 4:
+                System.out.println("Entrer une température en degrés Celsius :");
+                temperature = sc.nextDouble();
+                double fahrenheit = CelsiusVersFahrenheit(temperature);
+                System.out.println("La température en degrés Fahrenheit est : " + fahrenheit);
+                break;
+            case 5:
+                System.out.println("Entrer une température en degrés Fahrenheit :");
+                temperature = sc.nextDouble();
+                kelvin = FahrenheitVersKelvin(temperature);
+                System.out.println("La température en degrés Kelvin est : " + kelvin);
+                break;
+            case 6:
+                System.out.println("Entrer une température en degrés Kelvin :");
+                temperature = sc.nextDouble();
+                fahrenheit = KelvinVersFahrenheit(temperature);
+                System.out.println("La température en degrés Fahrenheit est : " + fahrenheit);
+                break;
+            default:
+                System.out.println("Choix invalide.");
+        }
+    }
 }
